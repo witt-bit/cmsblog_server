@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 查询评论的映射文件 -->
+<mapper namespace="com.lele.apps.cms.dao.extend.CommentExtendMapper">
+   
+    <!--  查询某个文章所有的评论 -->
+    <select id="selectByArticleId" parameterType="long" resultType="com.lele.apps.cms.bean.Comment">
+        SELECT *
+        FROM cms_comment
+        WHERE article_id=#{artical_id,jdbcType=BIGINT}
+    </select>
+    
+    <!--  查询某个用户所有的评论
+    
+    <select id="selectByUserId" parameterType="long" resultType="com.lele.apps.cms.bean.Comment">
+        SELECT *
+        FROM  cms_comment
+        WHERE user_id=#{user_id,jdbcType=BIGINT}
+    </select>
+    -->
+    
+</mapper>

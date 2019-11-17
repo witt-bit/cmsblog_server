@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  用户Article拓展功能映射的mapper配置文件  -->
+<mapper namespace="com.lele.apps.cms.dao.extend.ArticleExtendMapper">
+    
+    
+    <!-- 查询文章的时候，查询出文章，评论，作者等 -->
+    <resultMap id="ArticleExtendResultMap1"
+               type="com.lele.apps.cms.bean.extend.ArticleExtend"
+               extends="com.lele.apps.cms.dao.ArticleMapper.BaseResultMap"
+    >
+        <!--   查出来的分类id值对应拓展Article的 category，再查出来所有的 分类 -->
+        <association property="category" column="category_id" javaType="com.lele.apps.cms.bean.Category"
+                     select="com.lele.apps.cms.dao.CategoryMapper.selectByPrimaryKey"
+        />
+        <!--   查出来的作者id值 对应拓展Article的 user，再查出来对应的作者 -->
+        <association property="user" column="author_id" javaType="com.lele.apps.cms.bean.User"
+                     select="com.lele.apps.cms.dao.UserMapper.selectByPrimaryKey"
+        />
+    
+    </resultMap>
+    
+    <select id="selectAll" resultMap="ArticleExtendResultMap1">
+        SELECT *
+        FROM cms_article
+    </select>
+    
+    <!-- 查询文章的时候，查询出文章，评论，作者等 -->
+    <select id="selectById" parameterType="long" resultMap="ArticleExtendResultMap2">
+        SELECT *
+        FROM cms_article
+        WHERE id=#{id,jdbcType=BIGINT}
+    </select>
+    
+    
+    <resultMap id="ArticleExtendResultMap2"
+               type="com.lele.apps.cms.bean.extend.ArticleExtend"
+               extends="com.lele.apps.cms.dao.ArticleMapper.BaseResultMap"
+    >
+        <!--   查出来的分类id值对应拓展Article的 category，再查出来所有的 分类 -->
+        <association property="category" column="category_id" javaType="com.lele.apps.cms.bean.Category"
+                     select="com.lele.apps.cms.dao.CategoryMapper.selectByPrimaryKey"
+        />
+        
+        <!--   查出来的作者id值 对应拓展Article的 user，再查出来对应的作者 -->
+        <association property="user" column="author_id" javaType="com.lele.apps.cms.bean.User"
+                     select="com.lele.apps.cms.dao.UserMapper.selectByPrimaryKey"
+        />
+        
+        
+        <!--  通过Article_id查找comments-->
+        <collection property="comments" column="id"
+                    select="com.lele.apps.cms.dao.extend.CommentExtendMapper.selectByArticleId"
+        />
+    </resultMap>
+
+</mapper>
