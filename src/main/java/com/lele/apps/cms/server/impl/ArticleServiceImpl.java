@@ -69,9 +69,6 @@ public class ArticleServiceImpl implements IArticleService {
     @Override
     public void saveOrUpdate (Article article) throws CustomerException {
         
-        
-        
-    
         //先判断是更新操作还是插入操作
         if (article.getId() != null) {
             //更新操作

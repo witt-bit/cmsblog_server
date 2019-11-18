@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.UserExtendMapper">
+    
+    <resultMap id="UserExtendBaseResultMap"
+               type="com.lele.apps.cms.bean.extend.UserExtend"
+               extends="com.lele.apps.cms.dao.UserMapper.BaseResultMap"
+    >
+        <!-- 根据用户的id，再去查询映射用户的角色关系 -->
+        <collection property="roles" ofType="com.lele.apps.cms.bean.Role" column="id"
+                    select="com.lele.apps.cms.dao.extend.RoleExtendMapper.selectByUserId" />
+    
+    </resultMap>
+  
+    <!-- 通过id查询用户的信息，包括角色 -->
+    <select id="selectById" parameterType="long" resultMap="UserExtendBaseResultMap">
+      SELECT *
+      FROM cms_user
+      WHERE id=#{id,jdbcType=BIGINT}
+    </select>
+  
+</mapper>

@@ -1,5 +1,6 @@
 package com.lele.apps.cms.config;
 
+import com.lele.apps.cms.utils.CustomerException;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,6 +20,10 @@ public class CustomerExceptionHandler {
     // 捕获 Controller 中抛出的指定类型的异常，也可以指定其他异常
     public <E> Message handler (Exception exception) {
         exception.printStackTrace();
-        return MessageUtil.error(exception.getMessage());
+        
+        if (exception instanceof CustomerException)
+            return MessageUtil.error(exception.getMessage());
+        
+        return MessageUtil.error("您的操作不合法！");
     }
 }

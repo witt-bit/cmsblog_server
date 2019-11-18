@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.RoleExtendMapper">
+  
+  <!-- 通过用户id，联合桥表，查询出用户的角色 -->
+  <select id="selectByUserId" parameterType="long" resultType="com.lele.apps.cms.bean.Role">
+      SELECT role.id,role.name
+      FROM cms_user_role userRole,cms_role role
+      WHERE
+            userRole.user_id=#{userId,jdbcType=BIGINT}
+      AND
+            role.id=userRole.role_id
+    </select>
+    
+</mapper>

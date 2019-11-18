@@ -2,13 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 查询评论的映射文件 -->
 <mapper namespace="com.lele.apps.cms.dao.extend.CommentExtendMapper">
-   
+    
+    <!-- 级联查询出作者等信息 -->
+    <resultMap id="CommentExtendResultMap"
+               type="com.lele.apps.cms.bean.extend.CommentExtend"
+               extends="com.lele.apps.cms.dao.CommentMapper.BaseResultMap"
+    >
+       <!-- 级联查询出作者 -->
+        <association property="user" javaType="com.lele.apps.cms.bean.User"
+                     column="user_id"
+                     select="com.lele.apps.cms.dao.UserMapper.selectByPrimaryKey"
+        />
+        
+        
+<!--        <result column="user_id" jdbcType="BIGINT" property="userId" />-->
+<!--        <result column="article_id" jdbcType="BIGINT" property="articleId" />-->
+<!--        <result column="parent_id" jdbcType="BIGINT" property="parentId" />-->
+    </resultMap>
+    
+    <!-- 级联查询出所有的评论 -->
+    
+    <select id="selectAll" resultMap="CommentExtendResultMap">
+        SELECT *
+        FROM cms_comment
+    </select>
+    
     <!--  查询某个文章所有的评论 -->
-    <select id="selectByArticleId" parameterType="long" resultType="com.lele.apps.cms.bean.Comment">
+    <select id="selectByArticleId" parameterType="long"
+            resultMap="CommentExtendResultMap"
+    >
         SELECT *
         FROM cms_comment
         WHERE article_id=#{artical_id,jdbcType=BIGINT}
     </select>
+    
+    <!-- 通过状态筛选评论 -->
+    <select id="selectByStatus" parameterType="String"
+            resultMap="CommentExtendResultMap"
+    >
+        SELECT *
+        FROM cms_comment
+        WHERE status=#{satus,jdbcType=VARCHAR}
+    </select>
+    
+    <!-- 通过id级联查询评论 -->
+    <select id="selectById"  resultMap="CommentExtendResultMap">
+        SELECT *
+        FROM cms_comment
+        WHERE id=#{id,jdbcType=BIGINT}
+    </select>
+    
     
     <!--  查询某个用户所有的评论
     

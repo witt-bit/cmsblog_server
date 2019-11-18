@@ -1,6 +1,7 @@
 package com.lele.apps.cms.dao.extend;
 
 import com.lele.apps.cms.bean.Comment;
+import com.lele.apps.cms.bean.extend.CommentExtend;
 
 import java.util.List;
 
@@ -16,13 +17,17 @@ import java.util.List;
 
 public interface CommentExtendMapper {
 
-    //查看某一篇文章下的所有的id
-    List<Comment> selectByArticleId(Long artical_id);
+    //级联查询所有的评论
+    List<CommentExtend> selectAll();
     
-    //查看某个用户所有的评论
-    //List<Comment> selectByUserId(Long user_id);
+    //查看某一篇文章下的所有的评论
+    List<CommentExtend> selectByArticleId(Long artical_id);
+    
+    //通过评论id级联查询评论
+    Comment selectById(Long id);
     
     //通过用户id删除评论
     
-    //通过文章id删除评论
+    //通过状态查找评论
+    List<CommentExtend> selectByStatus(String satus);
 }
