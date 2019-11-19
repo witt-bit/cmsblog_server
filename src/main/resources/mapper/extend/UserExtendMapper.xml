@@ -11,12 +11,31 @@
                     select="com.lele.apps.cms.dao.extend.RoleExtendMapper.selectByUserId" />
     
     </resultMap>
-  
+    
     <!-- 通过id查询用户的信息，包括角色 -->
     <select id="selectById" parameterType="long" resultMap="UserExtendBaseResultMap">
-      SELECT *
-      FROM cms_user
-      WHERE id=#{id,jdbcType=BIGINT}
+        SELECT * FROM cms_user WHERE id=#{id,jdbcType=BIGINT}
     </select>
-  
+    
+    <!-- 通过username查询用户的信息，包括角色 -->
+    <select id="selectByUsername" parameterType="String" resultMap="UserExtendBaseResultMap">
+        SELECT * FROM cms_user WHERE username = #{username,jdbcType=VARCHAR}
+    </select>
+    <!-- 查询所有的用户信息，包括角色 -->
+    <select id="findAll" resultMap="UserExtendBaseResultMap">
+        SELECT *
+        FROM cms_user
+    </select>
+    <!-- 通过状态查询用户信息 -->
+    
+    <select id="selectByStatus" parameterType="String" resultMap="UserExtendBaseResultMap">
+        SELECT * FROM cms_user WHERE status =#{status,jdbcType=VARCHAR}
+    </select>
+    
+    <!-- 通过电话查询用户信息 -->
+    <select id="selectByTelePhone" parameterType="String" resultMap="UserExtendBaseResultMap">
+        SELECT *
+        FROM cms_user
+        WHERE telephone=#{tel,jdbcType=VARCHAR}
+    </select>
 </mapper>

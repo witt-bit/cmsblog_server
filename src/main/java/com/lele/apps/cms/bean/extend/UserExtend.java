@@ -16,6 +16,10 @@ import java.util.List;
  */
 public class UserExtend extends User {
     
+    public static final String NORMAL = "正常";
+    public static final String DISABLE = "禁用";
+    
+    //一个用户有多个角色
     private List<Role> roles;
     
     public List<Role> getRoles () {

@@ -1,6 +1,7 @@
 package com.lele.apps.cms.dao.extend;
 
 import com.lele.apps.cms.bean.Role;
+import com.lele.apps.cms.bean.User;
 
 import java.util.List;
 
@@ -19,4 +20,9 @@ public interface RoleExtendMapper {
     //通过用户id查找对应的角色
     List<Role> selectByUserId(Long userId);
     
+    Role selectByName (String reader);
+    
+    List<User> cascUserByName(String name);
+    
+    int deleteByName (String name);
 }

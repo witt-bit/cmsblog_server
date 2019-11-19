@@ -2,6 +2,8 @@ package com.lele.apps.cms.dao.extend;
 
 import com.lele.apps.cms.bean.extend.UserExtend;
 
+import java.util.List;
+
 /**
  * Copyright (C) @2019 lele fgwang.660@gmail.com
  *
@@ -16,4 +18,11 @@ public interface UserExtendMapper {
     
     UserExtend selectById(Long id);
     
+    UserExtend selectByUsername(String username);
+    
+    List<UserExtend> findAll();
+    
+    List<UserExtend> selectByStatus (String status);
+    
+    UserExtend selectByTelePhone (String tel);
 }
