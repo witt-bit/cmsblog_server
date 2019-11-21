@@ -1,7 +1,7 @@
 package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Test;
-import com.lele.apps.cms.server.ITestService;
+import com.lele.apps.cms.service.ITestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

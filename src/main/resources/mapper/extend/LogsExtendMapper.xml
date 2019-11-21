@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.LogsExtendMapper">
+  <resultMap id="LogsExtendBaseResultMap"
+             type="com.lele.apps.cms.bean.extend.LogsExtend"
+             extends="com.lele.apps.cms.dao.LogsMapper.BaseResultMap"
+  >
+    
+    <!-- 查询用户的时候级联查询出角色 -->
+    <collection property="user" column="user_id"
+                select="com.lele.apps.cms.dao.extend.UserExtendMapper.selectById"/>
+  </resultMap>
+  
+  
+<!--  查询所有的日志，包括用户和用户的角色 -->
+  <select id="selectAll" resultMap="LogsExtendBaseResultMap">
+    SELECT *
+    FROM cms_logs
+  </select>
+
+</mapper>

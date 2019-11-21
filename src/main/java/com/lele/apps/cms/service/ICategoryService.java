@@ -1,4 +1,4 @@
-package com.lele.apps.cms.server;
+package com.lele.apps.cms.service;
 
 import com.lele.apps.cms.bean.Category;
 import com.lele.apps.cms.utils.CustomerException;

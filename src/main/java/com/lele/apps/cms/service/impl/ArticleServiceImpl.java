@@ -1,11 +1,11 @@
-package com.lele.apps.cms.server.impl;
+package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Article;
 import com.lele.apps.cms.bean.ArticleExample;
 import com.lele.apps.cms.bean.extend.ArticleExtend;
 import com.lele.apps.cms.dao.ArticleMapper;
 import com.lele.apps.cms.dao.extend.ArticleExtendMapper;
-import com.lele.apps.cms.server.IArticleService;
+import com.lele.apps.cms.service.IArticleService;
 import com.lele.apps.cms.utils.CustomerException;
 import org.springframework.stereotype.Service;
 

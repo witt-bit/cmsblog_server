@@ -2,15 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef0b286-65de-410c-b814-d4b207ca0911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/UserExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/UserExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/RoleExtendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/RoleExtendMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/UserExtendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/UserExtendMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Article.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/ArticleExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/CategoryExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/CommentExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Logs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/LogsExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Privilege.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/PrivilegeExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/RoleExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/RolePrivilege.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/RolePrivilegeExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/TestExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/UserExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/UserRoleExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/ArticleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/CategoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/CommentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/LogsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/PrivilegeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/RoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/RolePrivilegeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/TestMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/UserRoleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/IArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/ICommentServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICommentServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/ITestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ITestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/server/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/extend/RoleExtendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/extend/RoleExtendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/extend/UserExtendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/extend/UserExtendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lele/apps/cms/CmsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lele/apps/cms/CmsApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CategoryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LogsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PrivilegeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RolePrivilegeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TestMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +70,9 @@
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -76,23 +129,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper/extend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lele.apps.cms.server" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main\java\com\lele\apps\cms\utils" />
       <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main\resources\mapper\extend" />
+      <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main\java\com\lele\apps\cms\utils" />
       <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main\java\com\lele\apps\cms\config" />
       <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main" />
       <recent name="D:\Documents\00_appWorkSpaces\IntelliJ_IDEA_WorkSpace\cms_jd1908\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lele.apps.cms.server" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lele.apps.cms.server" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,7 +163,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CmsApplicationTests.contextLoads">
+  <component name="RunManager" selected="Application.A">
+    <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lele.apps.cms.bean.extend.A" />
+      <module name="cms_jd1908" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lele.apps.cms.bean.extend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CmsApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cms_jd1908" />
       <extension name="coverage">
@@ -196,6 +265,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.A" />
         <item itemvalue="JUnit.CmsApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
@@ -243,7 +313,13 @@
       <workItem from="1574081172776" duration="13545000" />
       <workItem from="1574097859180" duration="125000" />
       <workItem from="1574122491277" duration="7773000" />
-      <workItem from="1574143115913" duration="9308000" />
+      <workItem from="1574143115913" duration="10822000" />
+      <workItem from="1574167697442" duration="3442000" />
+      <workItem from="1574209211423" duration="9986000" />
+      <workItem from="1574229786151" duration="7897000" />
+      <workItem from="1574254837290" duration="1990000" />
+      <workItem from="1574259129210" duration="9238000" />
+      <workItem from="1574295524017" duration="7622000" />
     </task>
     <servers />
   </component>

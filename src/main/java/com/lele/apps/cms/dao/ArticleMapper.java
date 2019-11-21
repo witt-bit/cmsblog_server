@@ -2,9 +2,8 @@ package com.lele.apps.cms.dao;
 
 import com.lele.apps.cms.bean.Article;
 import com.lele.apps.cms.bean.ArticleExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface ArticleMapper {
     long countByExample(ArticleExample example);

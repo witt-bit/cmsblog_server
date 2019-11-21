@@ -2,7 +2,7 @@ package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Comment;
 import com.lele.apps.cms.bean.extend.CommentExtend;
-import com.lele.apps.cms.server.ICommentServer;
+import com.lele.apps.cms.service.ICommentServer;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
 import io.swagger.annotations.Api;

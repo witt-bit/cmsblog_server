@@ -1,4 +1,4 @@
-package com.lele.apps.cms.server.impl;
+package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.User;
@@ -9,7 +9,7 @@ import com.lele.apps.cms.dao.UserMapper;
 import com.lele.apps.cms.dao.UserRoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
 import com.lele.apps.cms.dao.extend.UserExtendMapper;
-import com.lele.apps.cms.server.IUserService;
+import com.lele.apps.cms.service.IUserService;
 import com.lele.apps.cms.utils.CustomerException;
 import com.lele.apps.cms.utils.MD5Util;
 import org.springframework.stereotype.Service;

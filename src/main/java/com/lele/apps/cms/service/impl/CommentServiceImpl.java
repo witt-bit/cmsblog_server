@@ -1,10 +1,10 @@
-package com.lele.apps.cms.server.impl;
+package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Comment;
 import com.lele.apps.cms.bean.extend.CommentExtend;
 import com.lele.apps.cms.dao.CommentMapper;
 import com.lele.apps.cms.dao.extend.CommentExtendMapper;
-import com.lele.apps.cms.server.ICommentServer;
+import com.lele.apps.cms.service.ICommentServer;
 import com.lele.apps.cms.utils.CustomerException;
 import org.springframework.stereotype.Service;
 

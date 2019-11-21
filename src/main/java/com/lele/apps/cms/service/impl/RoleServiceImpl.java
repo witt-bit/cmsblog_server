@@ -1,10 +1,10 @@
-package com.lele.apps.cms.server.impl;
+package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.RoleExample;
 import com.lele.apps.cms.dao.RoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
-import com.lele.apps.cms.server.IRoleService;
+import com.lele.apps.cms.service.IRoleService;
 import com.lele.apps.cms.utils.CustomerException;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +48,7 @@ public class RoleServiceImpl implements IRoleService {
      */
     @Override
     public void addRole (Role role) throws CustomerException {
+        
         String name = role.getName();
         if (name == null || name.isEmpty())
             throw new CustomerException("角色名称不能为空");
@@ -65,6 +66,8 @@ public class RoleServiceImpl implements IRoleService {
      */
     @Override
     public void deleteRole (Role role) {
+        
+        
         if (role == null)
             throw new CustomerException("请输入角色名称或者角色id");
         if (role.getId() != null) {
@@ -73,8 +76,8 @@ public class RoleServiceImpl implements IRoleService {
         }
         if (role.getName() != null) {
             roleExtendMapper.deleteByName(role.getName());
-            return;
         }
+        
     }
     
     /**

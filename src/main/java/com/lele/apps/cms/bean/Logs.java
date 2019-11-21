@@ -5,6 +5,8 @@ public class Logs {
 
     private Long actionTime;
 
+    private String type;
+
     private Long userId;
 
     private String content;
@@ -23,6 +25,14 @@ public class Logs {
 
     public void setActionTime(Long actionTime) {
         this.actionTime = actionTime;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 
     public Long getUserId() {

@@ -1,9 +1,9 @@
-package com.lele.apps.cms.server.impl;
+package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Category;
 import com.lele.apps.cms.bean.CategoryExample;
 import com.lele.apps.cms.dao.CategoryMapper;
-import com.lele.apps.cms.server.ICategoryService;
+import com.lele.apps.cms.service.ICategoryService;
 import com.lele.apps.cms.utils.CustomerException;
 import org.springframework.stereotype.Service;
 

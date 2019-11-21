@@ -1,7 +1,7 @@
 package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Category;
-import com.lele.apps.cms.server.ICategoryService;
+import com.lele.apps.cms.service.ICategoryService;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
 import io.swagger.annotations.Api;
@@ -45,8 +45,8 @@ public class CategoryController {
         //判断是保存还是更新
         if (category.getId() != null)
             return MessageUtil.success("更新成功");
-        else
-            return MessageUtil.success("创建成功");
+        
+        return MessageUtil.success("创建成功");
     }
     
     @ApiOperation("通过id删除栏目")

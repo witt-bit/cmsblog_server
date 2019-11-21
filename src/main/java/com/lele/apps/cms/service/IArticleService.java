@@ -1,4 +1,4 @@
-package com.lele.apps.cms.server;
+package com.lele.apps.cms.service;
 
 import com.lele.apps.cms.bean.Article;
 import com.lele.apps.cms.bean.extend.ArticleExtend;

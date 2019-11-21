@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.lele.apps.cms.bean.Logs">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="action_time" jdbcType="BIGINT" property="actionTime" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="user_id" jdbcType="BIGINT" property="userId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lele.apps.cms.bean.Logs">
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, action_time, user_id
+    id, action_time, type, user_id
   </sql>
   <sql id="Blob_Column_List">
     content
@@ -122,10 +123,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.lele.apps.cms.bean.Logs">
-    insert into cms_logs (id, action_time, user_id, 
-      content)
-    values (#{id,jdbcType=BIGINT}, #{actionTime,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, 
-      #{content,jdbcType=LONGVARCHAR})
+    insert into cms_logs (id, action_time, type, 
+      user_id, content)
+    values (#{id,jdbcType=BIGINT}, #{actionTime,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=BIGINT}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.lele.apps.cms.bean.Logs">
     insert into cms_logs
@@ -135,6 +136,9 @@
       </if>
       <if test="actionTime != null">
         action_time,
+      </if>
+      <if test="type != null">
+        type,
       </if>
       <if test="userId != null">
         user_id,
@@ -149,6 +153,9 @@
       </if>
       <if test="actionTime != null">
         #{actionTime,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         #{userId,jdbcType=BIGINT},
@@ -173,6 +180,9 @@
       <if test="record.actionTime != null">
         action_time = #{record.actionTime,jdbcType=BIGINT},
       </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
       <if test="record.userId != null">
         user_id = #{record.userId,jdbcType=BIGINT},
       </if>
@@ -188,6 +198,7 @@
     update cms_logs
     set id = #{record.id,jdbcType=BIGINT},
       action_time = #{record.actionTime,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=BIGINT},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
@@ -198,6 +209,7 @@
     update cms_logs
     set id = #{record.id,jdbcType=BIGINT},
       action_time = #{record.actionTime,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -208,6 +220,9 @@
     <set>
       <if test="actionTime != null">
         action_time = #{actionTime,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
       </if>
       <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
@@ -221,6 +236,7 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lele.apps.cms.bean.Logs">
     update cms_logs
     set action_time = #{actionTime,jdbcType=BIGINT},
+      type = #{type,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
@@ -228,6 +244,7 @@
   <update id="updateByPrimaryKey" parameterType="com.lele.apps.cms.bean.Logs">
     update cms_logs
     set action_time = #{actionTime,jdbcType=BIGINT},
+      type = #{type,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>

@@ -51,22 +51,23 @@
         
         <!-- 映射配置 -->
         <!-- 测试表 -->
-        <table tableName="test" domainObjectName="Test" />
+<!--        <table tableName="test" domainObjectName="Test" />-->
         <!-- 基础表 -->
-        <table tableName="cms_user" domainObjectName="User" />
-        <table tableName="cms_user_role" domainObjectName="UserRole" />
-        <table tableName="cms_role" domainObjectName="Role" />
-        <table tableName="cms_privilege" domainObjectName="Privilege" />
-        <table tableName="cms_role_privilege" domainObjectName="RolePrivilege" />
+<!--        <table tableName="cms_user" domainObjectName="User" />-->
+<!--        <table tableName="cms_user_role" domainObjectName="UserRole" />-->
+<!--       -->
+<!--        <table tableName="cms_role" domainObjectName="Role" />-->
+<!--        <table tableName="cms_privilege" domainObjectName="Privilege" />-->
+<!--        <table tableName="cms_role_privilege" domainObjectName="RolePrivilege" />-->
         <table tableName="cms_logs" domainObjectName="Logs" />
         
-        <!-- 业务表 -->
-        <table tableName="cms_category" domainObjectName="Category" />
-        <table tableName="cms_article" domainObjectName="Article">
-            <columnOverride column="content" javaType="String" jdbcType="VARCHAR" />
-            <columnOverride column="source" javaType="String" jdbcType="VARCHAR" />
-        </table>
-        <table tableName="cms_comment" domainObjectName="Comment" />
+        <!-- 业务表-->
+<!--        <table tableName="cms_category" domainObjectName="Category" />-->
+<!--        <table tableName="cms_article" domainObjectName="Article">-->
+<!--            <columnOverride column="content" javaType="String" jdbcType="VARCHAR" />-->
+<!--            <columnOverride column="source" javaType="String" jdbcType="VARCHAR" />-->
+<!--        </table>-->
+<!--        <table tableName="cms_comment" domainObjectName="Comment" />-->
         
         <!--
             mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate

@@ -2,8 +2,9 @@ package com.lele.apps.cms.dao;
 
 import com.lele.apps.cms.bean.Logs;
 import com.lele.apps.cms.bean.LogsExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface LogsMapper {
     long countByExample(LogsExample example);

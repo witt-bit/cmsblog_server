@@ -2,7 +2,7 @@ package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.User;
 import com.lele.apps.cms.bean.extend.UserExtend;
-import com.lele.apps.cms.server.IUserService;
+import com.lele.apps.cms.service.IUserService;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
 import io.swagger.annotations.Api;

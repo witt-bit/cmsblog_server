@@ -2,8 +2,9 @@ package com.lele.apps.cms.dao;
 
 import com.lele.apps.cms.bean.UserRole;
 import com.lele.apps.cms.bean.UserRoleExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserRoleMapper {
     long countByExample(UserRoleExample example);
