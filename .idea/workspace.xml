@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef0b286-65de-410c-b814-d4b207ca0911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/LogsExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/LogsExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/CustomerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/CustomerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/LogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/LogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/PrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/PrivilegeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RolePrivilegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RolePrivilegeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/LogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/LogsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms_jd1908.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -289,7 +276,7 @@
       <workItem from="1574482419479" duration="20707000" />
       <workItem from="1574556844903" duration="7784000" />
       <workItem from="1574570448862" duration="408000" />
-      <workItem from="1574571057273" duration="16576000" />
+      <workItem from="1574571057273" duration="19916000" />
     </task>
     <servers />
   </component>

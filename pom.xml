@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>cms</name>
     <description>Demo project for Spring Boot</description>
+    <!-- 指定打包方式 -->
+    <packaging>war</packaging>
     
     <properties>
         <java.version>1.8</java.version>
@@ -91,12 +93,29 @@
             <artifactId>fastdfs-client-java</artifactId>
             <version>1.27-SNAPSHOT</version>
         </dependency>
+    
+        <!-- 指定内置tomcat的运行范围 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    
+        <!-- servlet依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
         
     </dependencies>
     
     
     
     <build>
+        <!-- 设置最终打成war包的名称 -->
+        <finalName>cms_leleBlog</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
