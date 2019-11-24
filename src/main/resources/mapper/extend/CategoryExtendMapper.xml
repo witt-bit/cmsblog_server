@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.CategoryExtendMapper">
+  <resultMap id="CategoryExtendBaseResultMap"
+             type="com.lele.apps.cms.bean.extend.CategoryExtend"
+             extends="com.lele.apps.cms.dao.CategoryMapper.BaseResultMap"
+    
+  >
+  
+    <association property="category" column="parent_id" javaType="com.lele.apps.cms.bean.Category"
+                 select="com.lele.apps.cms.dao.CategoryMapper.selectByPrimaryKey"/>
+  </resultMap>
+  
+  
+  <select id="selectAllIncludeParent" resultMap="CategoryExtendBaseResultMap">
+    SELECT *
+    FROM cms_category
+  </select>
+  
+</mapper>

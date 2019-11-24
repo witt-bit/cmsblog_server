@@ -21,7 +21,7 @@ import java.util.List;
 public class ArticleExtend extends Article {
     
     //使用常量来定义当前的状态
-    public static final String STATUS_UNCHECK = "未审核";
+    public static final String STATUS_UNCHECK = "待审核";
     public static final String STATUS_CHECK_PASS = "审核通过";
     public static final String STATUS_CHECK_NOPASS = "审核不通过";
     

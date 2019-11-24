@@ -90,9 +90,24 @@ public class CommentServiceImpl implements ICommentServer {
         Comment comment = commentMapper.selectByPrimaryKey(id);
         if (comment == null || comment.equals(""))
             throw new CustomerException("该评论已经不存在了");
-        
         //删除评论
         commentMapper.deleteByPrimaryKey(id);
+    }
+    
+    /**
+     * 批量删除评论
+     *
+     * @param ids id的数组
+     */
+    @Override
+    public void batchDelete (Long[] ids) {
+        if(ids==null||ids.length==0){
+            throw new CustomerException("请选择要删除的评论");
+        }
+        
+        for (Long id :ids){
+            commentMapper.deleteByPrimaryKey(id);
+        }
         
     }
 }

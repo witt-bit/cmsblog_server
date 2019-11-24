@@ -9,22 +9,24 @@
 
 package com.lele.apps.cms.config;
 
+import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.ApiKey;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * ClassName:Swagger2 <br/>
- * Function: TODO ADD FUNCTION. <br/>
- * Reason:	 TODO ADD REASON. <br/>
+ * Function: TODO ADD FUNCTION.
+ * Reason:	 TODO ADD REASON.
  * Date:     2018年6月10日 下午6:22:51 <br/>
- * @author   lichunyu
+ * @author   lele
  * @version  
  * @since    JDK 1.6
  * @see 	 
@@ -39,16 +41,21 @@ public class Swagger2 {
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.lele.apps.cms.web.controller"))
 				.paths(PathSelectors.any())
-				.build();
+				.build()
+				.securitySchemes(Lists.newArrayList(apiKey()));
 	}
 	
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				.title("乐乐博客")
-				.description("Copyright@lele")
-				.termsOfServiceUrl("http://www.briup.com")
+				.description("Copyright@lele fgwang.660@gmail.com")
+				.termsOfServiceUrl("https://github.com/leleplus")
 				.version("1.0")
 				.build();
+	}
+	
+	public ApiKey apiKey(){
+		return new ApiKey("Authorization", "Authorization", "header");
 	}
 }
 

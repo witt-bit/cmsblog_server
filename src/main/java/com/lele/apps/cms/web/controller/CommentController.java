@@ -93,4 +93,19 @@ public class CommentController {
         return MessageUtil.success("删除成功");
     }
     
+    /**
+     * 批量删除评论的方法
+     * @return
+     */
+    
+    @ApiOperation("通过id批量删除评论")
+    @PostMapping(value = "batchDelete", consumes = "application/json")
+    public Message batchDelete(@RequestBody Long[] ids){
+        
+        commentServer.batchDelete(ids);
+        
+        
+        return MessageUtil.success("删除成功");
+    }
+    
 }

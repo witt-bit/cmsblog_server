@@ -2,9 +2,11 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.User;
+import com.lele.apps.cms.bean.UserExample;
 import com.lele.apps.cms.bean.UserRole;
 import com.lele.apps.cms.bean.extend.RoleExtend;
 import com.lele.apps.cms.bean.extend.UserExtend;
+import com.lele.apps.cms.bean.vm.UserVM;
 import com.lele.apps.cms.dao.UserMapper;
 import com.lele.apps.cms.dao.UserRoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
@@ -176,4 +178,43 @@ public class UserServiceImpl implements IUserService {
         }
     }
     
+    /**
+     * 登录的方法
+     *
+     * @param userVM@return user对象
+     */
+    @Override
+    public User login (UserVM userVM) throws CustomerException{
+    
+        // 判空处理
+        if(userVM==null||userVM.getUsername()==null||userVM.getUsername().equals(""))
+            throw new CustomerException("请输入用户名");
+        if(userVM.getPassword()==null||userVM.getPassword().equals(""))
+            throw new CustomerException("请输入密码");
+            
+        // 查看用户是不是存在
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andUsernameEqualTo(userVM.getUsername());
+        List<User> list = userMapper.selectByExample(userExample);
+        if(list.size()==0)
+            throw new CustomerException("该用户不存在");
+    
+        // 从集合中拿出user对象
+        User user = list.get(0);
+        
+        // 判断密码是否匹配
+        
+        /*
+        // 如果注册时加密了密码
+            String p = MD5Util.calc(userVM.getPassword());
+            if(!user.getPassword().equals(p))
+                throw new CustomerException("密码错误");
+        */
+    
+        if(!user.getPassword().equals(userVM.getPassword()))
+            throw new CustomerException("密码错误");
+        
+    
+        return user;
+    }
 }

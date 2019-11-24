@@ -2,6 +2,7 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.RoleExample;
+import com.lele.apps.cms.bean.extend.RoleExtend;
 import com.lele.apps.cms.dao.RoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
 import com.lele.apps.cms.service.IRoleService;
@@ -91,7 +92,7 @@ public class RoleServiceImpl implements IRoleService {
     }
     
     /**
-     * 保存挥着更新角色的方法
+     * 保存或者更新角色的方法
      *
      * @param role
      * @throws CustomerException
@@ -112,5 +113,15 @@ public class RoleServiceImpl implements IRoleService {
             throw new CustomerException("该角色已经存在了");
     
         roleMapper.insert(role);
+    }
+    
+    /**
+     * 查询所有的角色，包含角色的权限
+     *
+     * @return
+     */
+    @Override
+    public List<RoleExtend> findAllIncludePrivilege () {
+        return roleExtendMapper.selectAllIncludePrivilege();
     }
 }

@@ -43,4 +43,10 @@ public interface ICommentServer {
      * 删除某一条评论
      */
     void deleteById(Long id);
+    
+    /**
+     * 批量删除评论
+     * @param ids id的数组
+     */
+    void batchDelete (Long[] ids);
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.PrivilegeExtendMapper">
+  
+  <resultMap id="PrivilegeExtendResultMap"
+             type="com.lele.apps.cms.bean.extend.PrivilegeExtend"
+              extends="com.lele.apps.cms.dao.PrivilegeMapper.BaseResultMap"
+  >
+    
+    <collection property="children" ofType="com.lele.apps.cms.bean.Privilege" column="id"
+                select="selectByParentId" />
+    </resultMap>
+  
+<!--  查询所有的一级目录 -->
+  <select id="selectAll" resultMap="PrivilegeExtendResultMap">
+    SELECT *
+    FROM cms_privilege
+    WHERE parent_id IS NULL
+  </select>
+
+  <!--  查询当前一级目录的所有子目录 -->
+  <select id="selectByParentId" parameterType="long"  resultType="com.lele.apps.cms.bean.Privilege">
+    SELECT *
+    FROM cms_privilege
+    WHERE parent_id = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 通过用户id查看用户的所有权限 -->
+  <select id="selectByUserId" resultType="com.lele.apps.cms.bean.Privilege">
+    SELECT p.*
+    FROM cms_user u,cms_user_role ur,cms_role r,cms_role_privilege rp,cms_privilege p
+    WHERE u.id = #{id,jdbcType=BIGINT}
+    AND u.id = ur.user_id
+    AND r.id = ur.role_id
+    AND rp.role_id = r.id
+    AND p.id = rp.privilege_id
+  </select>
+  
+  
+</mapper>

@@ -1,6 +1,7 @@
 package com.lele.apps.cms.service;
 
 import com.lele.apps.cms.bean.Category;
+import com.lele.apps.cms.bean.extend.CategoryExtend;
 import com.lele.apps.cms.utils.CustomerException;
 
 import java.util.List;
@@ -23,4 +24,11 @@ public interface ICategoryService {
     void deleteById(Long id)throws CustomerException;
     
     void batchDelete(Long[] ids)throws CustomerException;
+    
+    /**
+     * 查询所有的栏目。包括父栏目
+     * @return
+     */
+    List<CategoryExtend> findAllIncludeParent();
+    
 }

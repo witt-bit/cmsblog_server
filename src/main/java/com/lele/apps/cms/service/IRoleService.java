@@ -1,6 +1,7 @@
 package com.lele.apps.cms.service;
 
 import com.lele.apps.cms.bean.Role;
+import com.lele.apps.cms.bean.extend.RoleExtend;
 import com.lele.apps.cms.utils.CustomerException;
 
 import java.util.List;
@@ -49,5 +50,9 @@ public interface IRoleService {
      */
     void updateRole(Role role);
     
-    
+    /**
+     * 查询所有的角色，包含角色的权限
+     * @return
+     */
+    List<RoleExtend> findAllIncludePrivilege();
 }

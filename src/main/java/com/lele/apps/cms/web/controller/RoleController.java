@@ -1,6 +1,7 @@
 package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Role;
+import com.lele.apps.cms.bean.extend.RoleExtend;
 import com.lele.apps.cms.service.IRoleService;
 import com.lele.apps.cms.service.IUserRoleService;
 import com.lele.apps.cms.utils.Message;
@@ -10,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -85,5 +87,13 @@ public class RoleController {
         userRoleService.bindUserRole(map);
         return MessageUtil.success("角色设置成功");
     }
+    
+    @ApiOperation("查询角色级联查询权限")
+    @GetMapping("findAllIncludePrivilege")
+    public Message findAllIncludePrivilege(){
+        List<RoleExtend> list = roleService.findAllIncludePrivilege();
+        return MessageUtil.success("查询成功",list);
+    }
+    
     
 }

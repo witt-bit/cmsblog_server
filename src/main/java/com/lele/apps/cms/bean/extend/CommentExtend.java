@@ -15,7 +15,7 @@ import com.lele.apps.cms.bean.User;
 public class CommentExtend extends Comment {
     
     //常量设置状态
-    public static final String STATUS_UNCHECK = "未审核";
+    public static final String STATUS_UNCHECK = "待审核";
     public static final String STATUS_CHECK_PASS = "审核通过";
     public static final String STATUS_CHECK_NOPASS = "审核未通过";
     

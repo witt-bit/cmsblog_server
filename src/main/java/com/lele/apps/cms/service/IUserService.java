@@ -2,6 +2,8 @@ package com.lele.apps.cms.service;
 
 import com.lele.apps.cms.bean.User;
 import com.lele.apps.cms.bean.extend.UserExtend;
+import com.lele.apps.cms.bean.vm.UserVM;
+import com.lele.apps.cms.utils.CustomerException;
 
 import java.util.List;
 
@@ -19,42 +21,55 @@ public interface IUserService {
     
     /**
      * 通过id查询用户信息的方法
-     * @param id  用户的id
+     *
+     * @param id 用户的id
      * @return 用户的信息，包括级联查询的角色信息
      */
-    UserExtend findById(Long id);
+    UserExtend findById (Long id);
     
     /**
      * 通过username查询用户的详细信息
+     *
      * @param username 传入一个username的字符串
      * @return user对象，包括级联查询的信息
      */
-    UserExtend findByUsername(String username);
+    UserExtend findByUsername (String username);
     
     /**
      * 通过电话号码查询用户
+     *
      * @param tel 传入电话号码
      * @return 返回用户对象，包括角色
      */
-    UserExtend findByTel(String tel);
+    UserExtend findByTel (String tel);
     
     /**
      * 保存和更新用户
+     *
      * @param user 修改的用户的信息
      */
-    void saveOrUpdate(User user);
+    void saveOrUpdate (User user);
     
     /**
      * 删除用户通过id
+     *
      * @param id
      */
-    void deleteById(Long id);
+    void deleteById (Long id);
     
     /**
      * 筛选显示用户信息，包括级联查询的信息
+     *
      * @param rule 传入的规则(编辑，管理员，禁用或者启用字符串)
      * @return 用户详细信息的集合
      */
-     List<? super UserExtend> screening(String rule);
+    List<? super UserExtend> screening (String rule);
+    
+    /**
+     * 登录的方法
+     * @param user
+     * @return user对象
+     */
+    User login (UserVM userVM)throws CustomerException;
     
 }

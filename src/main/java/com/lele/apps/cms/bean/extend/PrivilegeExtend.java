@@ -16,13 +16,13 @@ import java.util.List;
 public class PrivilegeExtend extends Privilege {
     
     // 关联查看父级权限
-    private List<Privilege> privileges;
+    private List<Privilege> children;
     
-    public List<Privilege> getPrivileges () {
-        return privileges;
+    public List<Privilege> getChildren () {
+        return children;
     }
     
-    public void setPrivileges (List<Privilege> privileges) {
-        this.privileges = privileges;
+    public void setChildren (List<Privilege> children) {
+        this.children = children;
     }
 }

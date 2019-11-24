@@ -2,6 +2,7 @@ package com.lele.apps.cms.dao.extend;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.User;
+import com.lele.apps.cms.bean.extend.RoleExtend;
 
 import java.util.List;
 
@@ -25,4 +26,7 @@ public interface RoleExtendMapper {
     List<User> cascUserByName(String name);
     
     int deleteByName (String name);
+    
+    //查询角色，级联查询出权限
+    List<RoleExtend> selectAllIncludePrivilege();
 }

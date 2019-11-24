@@ -1,6 +1,7 @@
 package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Category;
+import com.lele.apps.cms.bean.extend.CategoryExtend;
 import com.lele.apps.cms.service.ICategoryService;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
@@ -59,17 +60,20 @@ public class CategoryController {
     @ApiOperation("通过id批量删除栏目")
     @PostMapping(value = "batchDelete", consumes = "application/json")
     public Message batchDelete (@RequestBody Long[] ids) {
-        if (ids.length == 0) {
-            return MessageUtil.error("请选择要删除的栏目");
-        }
-        
-        
+       
         //public Message batchDelete(@RequestBody Map<String,Long[]> map){
         //    Long[] ids = map.get("ids");
         
         //删除数据
         categoryService.batchDelete(ids);
         return MessageUtil.success("删除成功");
+    }
+    
+    @ApiOperation("查询所有的栏目信息")
+    @GetMapping("findAllIncludeParent")
+    public Message findAllIncludeParent () {
+        List<CategoryExtend> list = categoryService.findAllIncludeParent();
+        return MessageUtil.success(list);
     }
     
 }

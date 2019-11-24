@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.apps.cms.dao.extend.RolePrivilegeExtendMapper">
+    
+    <resultMap id="RolePrivilegeExtendMapperBaseResultMap"
+               type="com.lele.apps.cms.bean.extend.RolePrivilegeExtend"
+               extends="com.lele.apps.cms.dao.RolePrivilegeMapper.BaseResultMap"
+    >
+        <collection property="privileges" column="privilege_id"
+                    select="com.lele.apps.cms.dao.extend.PrivilegeExtendMapper.selectByParentId"/>
+    </resultMap>
+  
+    <select id="selectByRoleId" parameterType="long" resultType="com.lele.apps.cms.bean.Privilege">
+    SELECT p.*
+    FROM cms_role r,cms_role_privilege rp,cms_privilege p
+    WHERE r.id = #{id,jdbcType=BIGINT}
+    AND r.id=rp.role_id
+    AND rp.privilege_id = p.id
+  </select>
+
+
+</mapper>
