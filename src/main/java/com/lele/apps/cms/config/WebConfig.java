@@ -44,7 +44,8 @@ public class WebConfig implements WebMvcConfigurer {
 				// 排除不拦截的资源
 				.excludePathPatterns(
 						"/swagger-resources/**","/v2/**","/swagger-ui.html","/webjars/**",
-						"/user/login","/user/logout","/article/download","/privilege/findPrivilegeTree"
+						"/user/login","/user/logout","/article/download","/privilege/findPrivilegeTree",
+						"/user/info"
 				);
 	
 	}

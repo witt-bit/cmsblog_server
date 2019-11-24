@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef0b286-65de-410c-b814-d4b207ca0911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cms_jd1908.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cms_jd1908.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/ArticleExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/ArticleExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/CommentExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/CommentExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/PrivilegeExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/PrivilegeExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/RoleExtend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/bean/extend/RoleExtend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/CustomerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/CustomerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/Swagger2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/Swagger2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/RoleExtendMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/dao/extend/RoleExtendMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICommentServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/ICommentServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IPrivilegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IPrivilegeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/utils/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/utils/MessageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lele/apps/cms/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/extend/RoleExtendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/extend/RoleExtendMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +270,7 @@
       <workItem from="1574402989619" duration="966000" />
       <workItem from="1574418477652" duration="11118000" />
       <workItem from="1574482419479" duration="20707000" />
-      <workItem from="1574556844903" duration="1802000" />
+      <workItem from="1574556844903" duration="2840000" />
     </task>
     <servers />
   </component>
