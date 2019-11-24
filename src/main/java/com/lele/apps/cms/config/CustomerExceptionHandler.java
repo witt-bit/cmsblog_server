@@ -1,5 +1,6 @@
 package com.lele.apps.cms.config;
 
+import com.lele.apps.cms.bean.extend.LogsExtend;
 import com.lele.apps.cms.utils.*;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

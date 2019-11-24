@@ -2,6 +2,8 @@ package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Category;
 import com.lele.apps.cms.bean.extend.CategoryExtend;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.service.ICategoryService;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
@@ -30,6 +32,7 @@ public class CategoryController {
     @Autowired
     private ICategoryService categoryService;
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation("查询所有的栏目信息")
     @GetMapping("findAll")
     public Message findAll () {
@@ -37,6 +40,7 @@ public class CategoryController {
         return MessageUtil.success(list);
     }
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation(value = "保存或者更新", notes = "如果前台有id，就是更新操作，如果没有id，就是保存操作")
     @PostMapping("saveOrUpdate")
     public Message saveOrUpdate (Category category) {
@@ -50,6 +54,7 @@ public class CategoryController {
         return MessageUtil.success("创建成功");
     }
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation("通过id删除栏目")
     @GetMapping("deleteById")
     public Message deleteById (Long id) {
@@ -57,6 +62,7 @@ public class CategoryController {
         return MessageUtil.success("删除成功");
     }
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation("通过id批量删除栏目")
     @PostMapping(value = "batchDelete", consumes = "application/json")
     public Message batchDelete (@RequestBody Long[] ids) {
@@ -69,6 +75,7 @@ public class CategoryController {
         return MessageUtil.success("删除成功");
     }
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation("查询所有的栏目信息")
     @GetMapping("findAllIncludeParent")
     public Message findAllIncludeParent () {

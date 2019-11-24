@@ -25,6 +25,8 @@ public class LogsExtend extends Logs {
     public static final String LEVEL_ERROR = "error";
     //修改记录
     public static final String LEVEL_MODIFY = "modify";
+    // 删除记录
+    public static final String LEVEL_DELETE = "delete";
     
     private User user;
     

@@ -3,11 +3,12 @@ package com.lele.apps.cms.service.impl;
 import com.lele.apps.cms.bean.Category;
 import com.lele.apps.cms.bean.CategoryExample;
 import com.lele.apps.cms.bean.extend.CategoryExtend;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.CategoryMapper;
 import com.lele.apps.cms.dao.extend.CategoryExtendMapper;
 import com.lele.apps.cms.service.ICategoryService;
 import com.lele.apps.cms.utils.CustomerException;
-import com.lele.apps.cms.utils.MessageUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -33,11 +34,13 @@ public class CategoryServiceImpl implements ICategoryService {
     
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<Category> findAll () {
         return categoryMapper.selectByExample(new CategoryExample());
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY, LogsExtend.LEVEL_INFO})
     public void saveOrUpdate (Category category) throws CustomerException {
         //判空处理
         if (category.getName() == null || category.getName().equals("")) {
@@ -65,6 +68,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteById (Long id) throws CustomerException {
         
         Category category = categoryMapper.selectByPrimaryKey(id);
@@ -75,6 +79,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void batchDelete (Long[] ids) throws CustomerException {
         if (ids.length == 0) {
             throw new CustomerException("请选择要删除的栏目");
@@ -91,6 +96,7 @@ public class CategoryServiceImpl implements ICategoryService {
      * @return
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<CategoryExtend> findAllIncludeParent () {
         return categoryExtendMapper.selectAllIncludeParent();
     }

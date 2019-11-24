@@ -2,7 +2,9 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.RoleExample;
+import com.lele.apps.cms.bean.extend.LogsExtend;
 import com.lele.apps.cms.bean.extend.RoleExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.RoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
 import com.lele.apps.cms.service.IRoleService;
@@ -36,6 +38,7 @@ public class RoleServiceImpl implements IRoleService {
      * @return 返回集合，集合中是所有的角色对象
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public List<Role> findAll () {
         
         return roleMapper.selectByExample(new RoleExample());
@@ -48,6 +51,7 @@ public class RoleServiceImpl implements IRoleService {
      * @throws CustomerException 可能抛出添加失败的异常
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_INFO})
     public void addRole (Role role) throws CustomerException {
         
         String name = role.getName();
@@ -66,6 +70,7 @@ public class RoleServiceImpl implements IRoleService {
      * @param role 传入可能是角色的id，或者角色的name
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteRole (Role role) {
         
         
@@ -87,6 +92,7 @@ public class RoleServiceImpl implements IRoleService {
      * @param role 要更新的角色的信息
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_INFO})
     public void updateRole (Role role) {
         roleMapper.updateByPrimaryKey(role);
     }
@@ -98,6 +104,7 @@ public class RoleServiceImpl implements IRoleService {
      * @throws CustomerException
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY})
     public void saveOrUpdate (Role role) throws CustomerException {
         if (role.getId() != null){
             //更新
@@ -121,6 +128,7 @@ public class RoleServiceImpl implements IRoleService {
      * @return
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_INFO})
     public List<RoleExtend> findAllIncludePrivilege () {
         return roleExtendMapper.selectAllIncludePrivilege();
     }

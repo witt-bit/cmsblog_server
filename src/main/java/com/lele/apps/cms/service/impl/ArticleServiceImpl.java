@@ -3,6 +3,8 @@ package com.lele.apps.cms.service.impl;
 import com.lele.apps.cms.bean.Article;
 import com.lele.apps.cms.bean.ArticleExample;
 import com.lele.apps.cms.bean.extend.ArticleExtend;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.ArticleMapper;
 import com.lele.apps.cms.dao.extend.ArticleExtendMapper;
 import com.lele.apps.cms.service.IArticleService;
@@ -35,6 +37,7 @@ public class ArticleServiceImpl implements IArticleService {
     private ArticleExtendMapper articleExtendMapper;
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<Article> findAll () {
         return articleMapper.selectByExample(new ArticleExample());
     }
@@ -45,6 +48,7 @@ public class ArticleServiceImpl implements IArticleService {
      * @return
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<ArticleExtend> cascadeFindAll () {
         return articleExtendMapper.selectAll();
     }
@@ -56,6 +60,7 @@ public class ArticleServiceImpl implements IArticleService {
      * @return
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public ArticleExtend findById (Long id) {
         return articleExtendMapper.selectById(id);
     }
@@ -67,6 +72,7 @@ public class ArticleServiceImpl implements IArticleService {
      * @throws CustomerException
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY,LogsExtend.LEVEL_INFO})
     public void saveOrUpdate (Article article) throws CustomerException {
         
         //先判断是更新操作还是插入操作
@@ -103,6 +109,7 @@ public class ArticleServiceImpl implements IArticleService {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteById (Long id) throws CustomerException {
         //先判断这个文章是不是不存在
         Article article = articleMapper.selectByPrimaryKey(id);

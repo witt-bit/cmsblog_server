@@ -2,6 +2,7 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Logs;
 import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.LogsMapper;
 import com.lele.apps.cms.dao.extend.LogsExtendMapper;
 import com.lele.apps.cms.service.ILogsService;
@@ -36,6 +37,7 @@ public class LogServiceImpl implements ILogsService {
      * @return 日志记录的集合
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<LogsExtend> findAll () {
         return logsExtendMapper.selectAll();
     }
@@ -46,6 +48,7 @@ public class LogServiceImpl implements ILogsService {
      * @param ids 批量删除的id数组
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void batchDeleteLogs (Long[] ids) {
         
         //判断是不是传了个空
@@ -70,6 +73,7 @@ public class LogServiceImpl implements ILogsService {
      * @param id 要删除的日志id
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteLog (Long id) {
         //先判断存不存在
         Logs logs = logsMapper.selectByPrimaryKey(id);

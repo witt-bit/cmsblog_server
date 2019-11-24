@@ -2,6 +2,8 @@ package com.lele.apps.cms.web.controller;
 
 import com.lele.apps.cms.bean.Article;
 import com.lele.apps.cms.bean.extend.ArticleExtend;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.service.IArticleService;
 import com.lele.apps.cms.utils.Message;
 import com.lele.apps.cms.utils.MessageUtil;
@@ -45,6 +47,7 @@ public class ArticleController {
         return MessageUtil.success(list);
     }
     
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_ERROR})
     @ApiOperation("通过id查询文章")
     @GetMapping("findById")
     public Message findById (Long id) {

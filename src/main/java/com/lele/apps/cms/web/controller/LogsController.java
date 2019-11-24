@@ -9,9 +9,7 @@ import com.lele.apps.cms.utils.TimeFormatUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -49,6 +47,20 @@ public class LogsController {
     @GetMapping("screening")
     public Message screening(String rule){
         return MessageUtil.success("查询成功");
+    }
+    
+    @ApiOperation("通过id删除日志")
+    @GetMapping("deleteById")
+    public Message deleteById(Long id){
+        logsService.deleteLog(id);
+        return MessageUtil.success("删除成功");
+    }
+    
+    @ApiOperation("批量删除日志")
+    @PostMapping("batchDeleteByIds")
+    public Message batchDeleteByIds(@RequestBody Long[] ids){
+        logsService.batchDeleteLogs(ids);
+        return MessageUtil.success("删除成功");
     }
 
     @ApiOperation(value = "将日志导出为Excel",notes ="需要将地址复制到浏览器才能打开(使用浏览器打开)" )

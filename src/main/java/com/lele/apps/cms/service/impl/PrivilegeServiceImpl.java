@@ -2,7 +2,9 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Privilege;
 import com.lele.apps.cms.bean.PrivilegeExample;
+import com.lele.apps.cms.bean.extend.LogsExtend;
 import com.lele.apps.cms.bean.extend.PrivilegeExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.PrivilegeMapper;
 import com.lele.apps.cms.dao.extend.PrivilegeExtendMapper;
 import com.lele.apps.cms.service.IPrivilegeService;
@@ -36,6 +38,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
      * @return list集合
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<Privilege> findAll () {
         return privilegeMapper.selectByExample(new PrivilegeExample());
     }
@@ -47,6 +50,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
      * @throws CustomerException 权限可能重复的异常
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_INFO})
     public void add (Privilege privilege) throws CustomerException {
     
     }
@@ -57,6 +61,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
      * @param privilege 要删除的权限对象
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void delete (Long id) {
         
         PrivilegeExample privilegeExample = new PrivilegeExample();
@@ -73,6 +78,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
      * @return 带有子目录的权限列表
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<PrivilegeExtend> findAllIncludeChrild () {
         return privilegeExtendMapper.selectAll();
     }
@@ -83,6 +89,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
      * @param privilege 权限对象
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_MODIFY,LogsExtend.LEVEL_SAVE})
     public void saveOrUpdate (Privilege privilege) {
         //判空结束
         if (privilege.getName() == null || privilege.getName().equals(""))
@@ -113,6 +120,7 @@ public class PrivilegeServiceImpl implements IPrivilegeService {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<Privilege> selectByUserId (Long id) {
         return privilegeExtendMapper.selectByUserId(id);
     }

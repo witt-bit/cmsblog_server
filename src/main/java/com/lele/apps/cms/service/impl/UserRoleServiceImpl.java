@@ -2,6 +2,8 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.UserRole;
 import com.lele.apps.cms.bean.UserRoleExample;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.UserRoleMapper;
 import com.lele.apps.cms.service.IUserRoleService;
 import com.lele.apps.cms.utils.CustomerException;
@@ -33,6 +35,7 @@ public class UserRoleServiceImpl implements IUserRoleService {
      * @throws CustomerException 设置失败的异常
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_DELETE})
     public void bindUserRole (Map<String, Object> map) throws CustomerException {
         //把用户的id和当前要设置的所有的角色拿出来
         Long user_id = Long.parseLong(map.get("user_id")+"");

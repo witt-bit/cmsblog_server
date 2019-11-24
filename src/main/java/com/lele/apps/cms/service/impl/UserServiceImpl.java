@@ -4,9 +4,11 @@ import com.lele.apps.cms.bean.Role;
 import com.lele.apps.cms.bean.User;
 import com.lele.apps.cms.bean.UserExample;
 import com.lele.apps.cms.bean.UserRole;
+import com.lele.apps.cms.bean.extend.LogsExtend;
 import com.lele.apps.cms.bean.extend.RoleExtend;
 import com.lele.apps.cms.bean.extend.UserExtend;
 import com.lele.apps.cms.bean.vm.UserVM;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.UserMapper;
 import com.lele.apps.cms.dao.UserRoleMapper;
 import com.lele.apps.cms.dao.extend.RoleExtendMapper;
@@ -52,6 +54,7 @@ public class UserServiceImpl implements IUserService {
      * @return 用户的信息，包括级联查询的角色信息
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_QUERY})
     public UserExtend findById (Long id) {
         return userExtendMapper.selectById(id);
     }
@@ -63,6 +66,7 @@ public class UserServiceImpl implements IUserService {
      * @return 返回用户对象，包括角色
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_QUERY})
     public UserExtend findByTel (String tel) {
         return userExtendMapper.selectByTelePhone(tel);
     }
@@ -74,6 +78,7 @@ public class UserServiceImpl implements IUserService {
      * @return user对象，包括级联查询的信息
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_QUERY})
     public UserExtend findByUsername (String username) {
         
         //判断是不是为空
@@ -89,6 +94,7 @@ public class UserServiceImpl implements IUserService {
      * @param user 修改的用户的信息
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY})
     public void saveOrUpdate (User user) {
         //如果前台传了密码，就把密码加密
         String oldPassword = user.getPassword();
@@ -143,6 +149,7 @@ public class UserServiceImpl implements IUserService {
      * @param id
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteById (Long id) {
         User user = userMapper.selectByPrimaryKey(id);
         if (user == null)
@@ -160,6 +167,7 @@ public class UserServiceImpl implements IUserService {
      * @return 用户详细信息的集合
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_QUERY})
     public List<? super UserExtend> screening (String rule) {
         //筛选条件为空，查询所有的用户
         if (rule == null || rule.isEmpty()) {

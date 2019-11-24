@@ -34,6 +34,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
     
+    
     @ApiOperation("登录的接口")
     @PostMapping("login")
     public Message login (@RequestBody UserVM userVM) {
@@ -41,11 +42,15 @@ public class UserController {
         User user = userService.login(userVM);
         //2. 登录成功，产生一个token，缓存起来，返回
         String token = JwtTokenUtil.createJWT(user.getId(), user.getUsername());
-    
+        
         //3.如果登录失败
         
         Map<String, String> map = new HashMap<>();
         map.put("token", token);
+        
+        // 将用户的id放到model中
+        //session.setAttribute("userId",user.getId());
+        //session.setMaxInactiveInterval(3600);
         
         return MessageUtil.success(map);
         
@@ -67,45 +72,40 @@ public class UserController {
         long id = Long.parseLong(JwtTokenUtil.getUserId(token, JwtTokenUtil.base64Secret));
         //通过id
         UserExtend user = userService.findById(id);
-    
+        
+        // 将用户的id放到model中
+        //session.setAttribute("userId",user.getId());
+        //session.setMaxInactiveInterval(3600);
+        
         return MessageUtil.success(user);
     }
     
     @ApiOperation("通过id查询用户信息，包括用户角色")
     @GetMapping("findById")
-    public Message findById(Long id){
+    public Message findById (Long id) {
         UserExtend user = userService.findById(id);
         return MessageUtil.success(user);
     }
     
     @ApiOperation("通过username查询用户信息，包括用户角色")
     @PostMapping("findByUsername")
-    public Message findByUsername(String username){
-    
+    public Message findByUsername (String username) {
+        
         UserExtend user = userService.findByUsername(username);
         return MessageUtil.success(user);
     }
     
     @ApiOperation("通过telephone查询用户的信息，包括用户的角色")
     @PostMapping("findByTel")
-    public Message findByTel(String tel){
+    public Message findByTel (String tel) {
         UserExtend user = userService.findByTel(tel);
         return MessageUtil.success(user);
     }
     
     @ApiOperation("用户保存或者更新的方法(注册或者修改用户信息)")
     @PostMapping("saveOrUpdate")
-    public Message saveOrUpdate(
-            @ApiParam("id") @RequestParam(value = "id", required = false) Long id,
-            @ApiParam("username") @RequestParam(value = "username", required = false) String username,
-            @ApiParam("password") @RequestParam(value = "password",required = false) String password,
-            @ApiParam("telephone") @RequestParam(value = "telephone") String telephone,
-            @ApiParam("realname") @RequestParam(value = "realname",required = false) String realname,
-            @ApiParam("gender") @RequestParam(value = "gender",required = false)  String gender,
-            @ApiParam("birth") @RequestParam(value = "birth",required = false) Long birth,
-            @ApiParam("user_face") @RequestParam(value = "user_face",required = false) String user_face
-            ){
-    
+    public Message saveOrUpdate (@ApiParam("id") @RequestParam(value = "id", required = false) Long id, @ApiParam("username") @RequestParam(value = "username", required = false) String username, @ApiParam("password") @RequestParam(value = "password", required = false) String password, @ApiParam("telephone") @RequestParam(value = "telephone") String telephone, @ApiParam("realname") @RequestParam(value = "realname", required = false) String realname, @ApiParam("gender") @RequestParam(value = "gender", required = false) String gender, @ApiParam("birth") @RequestParam(value = "birth", required = false) Long birth, @ApiParam("user_face") @RequestParam(value = "user_face", required = false) String user_face) {
+        
         //创建用户
         User user = new User();
         user.setId(id);
@@ -120,25 +120,26 @@ public class UserController {
         //调用service层
         userService.saveOrUpdate(user);
         
-        if(id==null)
+        if (id == null)
             return MessageUtil.success("注册成功");
         
         return MessageUtil.success("更新成功");
     }
     
+    
     @ApiOperation("通过id删除单个用户")
     @GetMapping("deleteById")
-    public Message deleteById(Long id){
+    public Message deleteById (Long id) {
         userService.deleteById(id);
-        return  MessageUtil.success("删除成功");
+        return MessageUtil.success("删除成功");
     }
     
     @ApiOperation("通过指定的规则筛选用户")
     @GetMapping("screeningUserData")
-    public Message screeningUserData(String rule){
+    public Message screeningUserData (String rule) {
         List<? super UserExtend> users = userService.screening(rule);
-    
-        return MessageUtil.success("查询成功",users);
+        
+        return MessageUtil.success("查询成功", users);
     }
     
     

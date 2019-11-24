@@ -2,6 +2,8 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.RolePrivilege;
 import com.lele.apps.cms.bean.RolePrivilegeExample;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.RolePrivilegeMapper;
 import com.lele.apps.cms.dao.extend.RolePrivilegeExtendMapper;
 import com.lele.apps.cms.service.IRolePrivilegeService;
@@ -37,6 +39,7 @@ public class RolePrivilegeServiceImpl implements IRolePrivilegeService {
      * @throws CustomerException 可能抛出自定义的错误异常
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY})
     public void bindRolePrivileges (Long role_id, Long[] privilege_ids) throws CustomerException {
         if(role_id==null)
             throw new CustomerException("请选择需要设置权限的角色");
@@ -49,7 +52,6 @@ public class RolePrivilegeServiceImpl implements IRolePrivilegeService {
         if(list.size()!=0){
             // 删除角色原来的所有权限
             rolePrivilegeMapper.deleteByExample(rolePrivilegeExample);
-            return;
         }
         
         // 如果没有选择任何权限

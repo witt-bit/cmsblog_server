@@ -2,6 +2,8 @@ package com.lele.apps.cms.service.impl;
 
 import com.lele.apps.cms.bean.Comment;
 import com.lele.apps.cms.bean.extend.CommentExtend;
+import com.lele.apps.cms.bean.extend.LogsExtend;
+import com.lele.apps.cms.config.RecordLog;
 import com.lele.apps.cms.dao.CommentMapper;
 import com.lele.apps.cms.dao.extend.CommentExtendMapper;
 import com.lele.apps.cms.service.ICommentServer;
@@ -44,6 +46,7 @@ public class CommentServiceImpl implements ICommentServer {
     }
     */
     @Override
+    @RecordLog({LogsExtend.LEVEL_SAVE,LogsExtend.LEVEL_MODIFY,LogsExtend.LEVEL_INFO})
     public void saveOrUpdate (Comment comment) throws CustomerException {
         //判断是更新还是保存
         if (comment.getId() == null) {
@@ -66,12 +69,14 @@ public class CommentServiceImpl implements ICommentServer {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public Comment findById (Long id) {
         
         return commentExtendMapper.selectById(id);
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_QUERY,LogsExtend.LEVEL_INFO})
     public List<CommentExtend> findByStatus (String status) {
         
         //传入的状态为空，查找所有的评论
@@ -85,6 +90,7 @@ public class CommentServiceImpl implements ICommentServer {
     }
     
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void deleteById (Long id) {
         //判断评论是不是存在
         Comment comment = commentMapper.selectByPrimaryKey(id);
@@ -100,6 +106,7 @@ public class CommentServiceImpl implements ICommentServer {
      * @param ids id的数组
      */
     @Override
+    @RecordLog({LogsExtend.LEVEL_INFO,LogsExtend.LEVEL_DELETE})
     public void batchDelete (Long[] ids) {
         if(ids==null||ids.length==0){
             throw new CustomerException("请选择要删除的评论");
