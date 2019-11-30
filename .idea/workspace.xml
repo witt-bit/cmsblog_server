@@ -70,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -277,7 +277,7 @@
       <workItem from="1574641842131" duration="263000" />
       <workItem from="1574758242535" duration="729000" />
       <workItem from="1575095248040" duration="147000" />
-      <workItem from="1575095687827" duration="3895000" />
+      <workItem from="1575095687827" duration="4493000" />
     </task>
     <servers />
   </component>
