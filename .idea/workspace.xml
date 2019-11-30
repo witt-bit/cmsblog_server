@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef0b286-65de-410c-b814-d4b207ca0911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cms_jd1908.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -74,7 +73,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -276,7 +275,11 @@
       <workItem from="1574482419479" duration="20707000" />
       <workItem from="1574556844903" duration="7784000" />
       <workItem from="1574570448862" duration="408000" />
-      <workItem from="1574571057273" duration="19916000" />
+      <workItem from="1574571057273" duration="21732000" />
+      <workItem from="1574614106385" duration="1632000" />
+      <workItem from="1574641842131" duration="263000" />
+      <workItem from="1574758242535" duration="729000" />
+      <workItem from="1575095248040" duration="147000" />
     </task>
     <servers />
   </component>
