@@ -30,7 +30,7 @@
 
 ## 运行项目
 
-```
+```sh
 mvn spring-boot:run
 ```
 
